@@ -1,11 +1,11 @@
 import express from "express"
+import router from './routes'
 
-const app = express ()
+const app = express()
 
-app.get("/", (req, res) =>{
-    res.send("Hello world")
-})
+app.use(express.json())
+app.use(router)
 
-app.listen(3000, () =>{
-    console.log("Aplicativo esta no ar")
-})
+const PORT = 3000
+
+app.listen(PORT, () => "Servidor rodando")

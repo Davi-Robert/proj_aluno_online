@@ -7,12 +7,12 @@
   "author": "ngdx4 <160502699+ngdx4@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev:server": "yarn ts-node --respawn -- ignore-watch node_modules src/server.ts",
-    "typeorm": "yarn ts-node-dev ./node_modules/typeorm/cli.js"
+    "start": "yarn ts-node-dev ./src/server.ts" ,
+    "build": "yarn tsc",
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "typeorm": "0.2.37",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
