@@ -1,7 +1,7 @@
-import { User } from '../../entity'
 import { IUser } from './types'
 
 import { AppDataSource } from '../../data-source'
+import { User } from '../../entity'
 
 export class UserRepository {
   async getUsers() {
