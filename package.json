@@ -2,22 +2,24 @@
   "name": "proj_aluno_online",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "https://github.com/ngdx4/proj_aluno_online",
   "author": "ngdx4 <160502699+ngdx4@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn ts-node-dev ./src/server.ts" ,
+    "start": "yarn ts-node-dev ./src/server.ts",
     "build": "yarn tsc",
     "postinstall": "yarn build"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "typescript": "^5.4.5"
+    "express": "4.19.2",
+    "pg": "^8.11.5",
+    "reflect-metadata": "^0.2.2",
+    "ts-node-dev": "2.0.0",
+    "typeorm": "^0.3.20",
+    "typescript": "5.4.5"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.12.10",
-    "ts-node-dev": "1.1.8"
+    "@types/express": "4.17.21",
+    "@types/node": "20.12.10"
   }
 }
