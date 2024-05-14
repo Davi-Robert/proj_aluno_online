@@ -1,4 +1,7 @@
+import { User } from '../../entity'
 import { IUser } from './types'
+
+import { AppDataSource } from '../../data-source'
 
 export class UserRepository {
   async getUsers() {
@@ -17,8 +20,22 @@ export class UserRepository {
 
     return db
   }
-},
+  async createUser() {
+    const userRepository = AppDataSource.getRepository(User)
+    const birthday = (new Date()).toTimeString()
+    const user = {
+      name: "Teste",
+      surname: "User 1",
+      email: "teste@gmail.com",
+      birthday: birthday
+    }
 
-async createUser (){
+    await userRepository.save(user)
+    console.log("Usuário salvo")
 
+    console.log("Showing all users")
+
+    const savedUsers = await userRepository.find()
+    console.log(savedUsers)
+  }
 }
