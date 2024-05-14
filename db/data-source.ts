@@ -3,13 +3,16 @@ require ("dotenv/config")
 
 const { DataSource } = require ('typeorm')
 
-export const AppDataSource = new DataSource({
+const AppDataSource = new DataSource({
   type: "postgres",
   url: process.env.DATABASE_URL,
   synchronize: false,
   logging: false,
-  entities: ['entity/*.ts'],
-  migrations: ['migration/*.ts']
+  entities: ['db/entity/*.ts'],
+  migrations: ['db/migration/*.ts'],
+  ssl:{
+    rejectUnauthorized: false
+  }
 })
 
 AppDataSource.initialize()

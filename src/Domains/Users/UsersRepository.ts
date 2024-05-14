@@ -17,4 +17,8 @@ export class UserRepository {
 
     return db
   }
+},
+
+async createUser (){
+
 }
