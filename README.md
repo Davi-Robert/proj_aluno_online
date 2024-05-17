@@ -2,5 +2,6 @@
 comando para deletar todos usuarios do banco de dados:
 DELETE FROM users;
 
-md5 hash
+md5 hash,
+
 json web token
