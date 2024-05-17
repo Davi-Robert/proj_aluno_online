@@ -3,13 +3,6 @@ import { User } from '../../../db/entity'
 import { IUser } from './types'
 
 export class UserRepository {
-  async getUsers() {
-    const db: IUser[] = [
-
-    ]
-
-    return db
-  }
   async createUser({ name, surname, email, birthday, password }: IUser) {
     const userRepository = AppDataSource.getRepository(User)
     const user = {
